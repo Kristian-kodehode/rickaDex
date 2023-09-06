@@ -8,13 +8,10 @@
 
 html {
   font-family: monospace;
-  background-image: url("/rick-morty-season-5.webp");
 }
-
 body {
-  background-color: #e9e9537a;
-
-  height: 100vh;
+  background-image: url("/rick-morty-season-5.webp");
+  background-size: cover;
 }
 
 h1 {
