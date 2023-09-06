@@ -1,0 +1,116 @@
+/* App.css */
+/* Common styles for both mobile and wider screens */
+
+.characters-container-mobile {
+  color: white;
+  max-width: 350px;
+  height: 600px;
+  border: 1px solid black;
+  /* width: fit-content; */
+  margin: 0 auto;
+  border-radius: 1rem;
+  padding-bottom: 1em;
+  display: grid;
+  gap: 0.5em;
+  padding: 1.25em 1em;
+}
+.characters-container-desktop {
+  display: none;
+}
+
+.characters-mobile {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1em;
+
+  width: 100%;
+  height: 500px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+.characters-desktop {
+  display: none;
+}
+.character-desktop {
+  display: none;
+}
+.characters-card {
+  /* width: 80px; */
+  width: 100%;
+  text-align: center;
+  display: grid;
+  overflow: hidden;
+}
+.characters-names {
+  padding-top: 2px;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.section-background-styling {
+  background-color: coral;
+}
+
+.thumbnailimages {
+  /* width: 80px; */
+  width: 100%;
+
+  border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  /* Styles for screens wider than 768px */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: teal;
+  }
+
+  .characters-container-mobile {
+    display: none;
+  }
+  .characters-container-desktop {
+    color: white;
+    max-width: 350px;
+    height: 600px;
+    /* border: 1px solid black; */
+    border: 1px solid white;
+
+    margin: 0 auto;
+    border-radius: 1rem;
+    padding-bottom: 1em;
+    display: grid;
+    gap: 0.5em;
+    padding: 1em;
+  }
+
+  .characters-desktop {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1em;
+
+    width: 100%;
+    height: 100%;
+    /* max-width: 400px; */
+
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .characters-mobile {
+    display: none;
+  }
+  .character-desktop {
+    display: flex;
+  }
+  .characters-names {
+    -webkit-line-clamp: 2;
+  }
+}
