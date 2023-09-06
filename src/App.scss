@@ -13,12 +13,13 @@
   display: grid;
   align-items: start;
   gap: 0.5em;
-  padding: 1.25em 1em;
+  // padding: 1.25em 1em;
 }
 .character-container-mobile {
   justify-content: center;
   background-color: #01afc61a;
   img {
+    width: 100%;
     border-radius: 0.5rem 0.5em 0em 0em;
     margin-bottom: -8px;
     box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.1);
@@ -80,6 +81,7 @@
 }
 
 .section-background-styling {
+  padding: 1.5em 1em;
   border: 1px solid white;
   color: white;
   border-radius: 1rem;
