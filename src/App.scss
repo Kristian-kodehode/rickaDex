@@ -2,31 +2,31 @@
 /* Common styles for both mobile and wider screens */
 /* Skeleton Loader Styles */
 
-.skeleton {
-  color: white;
-  max-width: 350px;
-  height: 500px;
+// .skeleton {
+//   color: white;
+//   max-width: 350px;
+//   height: 500px;
 
-  margin: auto;
-  border-radius: 1rem;
-  padding-bottom: 1em;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: start;
-  gap: 0.5em;
-  .skeleton-thumbnail {
-    width: 100%;
-    height: 70px;
-    background-color: #ddd;
-    border-radius: 0.5em;
-    margin-bottom: 0.2em;
-  }
-  .skeleton-name {
-    width: 100%;
-    height: 10px;
-    background-color: #ddd;
-  }
-}
+//   margin: auto;
+//   border-radius: 1rem;
+//   padding-bottom: 1em;
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   align-items: start;
+//   gap: 0.5em;
+//   .skeleton-thumbnail {
+//     width: 100%;
+//     height: 70px;
+//     background-color: #ddd;
+//     border-radius: 0.5em;
+//     margin-bottom: 0.2em;
+//   }
+//   .skeleton-name {
+//     width: 100%;
+//     height: 10px;
+//     background-color: #ddd;
+//   }
+// }
 
 .characters-container-mobile,
 .character-container-mobile {
