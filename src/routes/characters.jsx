@@ -79,12 +79,12 @@ const Characters = () => {
   return (
     <div className="container">
       {/* DISPLAY CHOSEN CHARACTER ON DESKTOP */}
-      <div className="character-desktop">
+      <div className="character-desktop section-background-styling">
         {selectedCharacter ? (
           <div>
+            <img src={selectedCharacter.image} alt="" />
             <h1>Name: {selectedCharacter.name}</h1>
             <h1>Status: {selectedCharacter.status}</h1>
-            <img src={selectedCharacter.image} alt="" />
           </div>
         ) : (
           <p>Loading...</p>

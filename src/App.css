@@ -78,8 +78,9 @@
     max-width: 1200px;
     margin: auto;
     display: flex;
+    gap: 1rem;
     justify-content: space-between;
-    background-color: teal;
+    /* background-color: teal; */
   }
 
   .characters-container-mobile {
@@ -87,7 +88,7 @@
   }
   .characters-container-desktop {
     /* color: white; */
-    max-width: 350px;
+    max-width: 550px;
     height: 600px;
 
     margin: 0 auto;
@@ -114,7 +115,8 @@
   }
   .character-desktop {
     display: block;
-    border: 1px solid black;
+
+    width: 100%;
   }
   .characters-names {
     -webkit-line-clamp: 2;
