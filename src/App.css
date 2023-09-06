@@ -5,7 +5,7 @@
   color: white;
   max-width: 350px;
   height: 600px;
-  border: 1px solid black;
+
   /* width: fit-content; */
   margin: 0 auto;
   border-radius: 1rem;
@@ -53,6 +53,7 @@
 }
 
 .section-background-styling {
+  border: 1px solid white;
   /* background-color: coral; */
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.2);
