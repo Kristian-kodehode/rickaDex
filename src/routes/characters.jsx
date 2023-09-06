@@ -90,29 +90,39 @@ const Characters = () => {
         )}
       </div>
       <div>
-        <div className="displaypages">
+        {/* <div className="displaypages">
           <h2>Pages of characters</h2>
           <div className="buttons-container">
-            <button onClick={handleFirstPage}>First Page</button>
-            <button onClick={handlePrevPage}>Prev Page</button>
-            <button onClick={handleNextPage}>Next Page</button>
-            <button onClick={handleLastPage}>Last Page</button>
+            <button onClick={handleFirstPage}>First</button>
+            <button onClick={handlePrevPage}>Prev</button>
+            <button onClick={handleNextPage}>Next</button>
+            <button onClick={handleLastPage}>Last</button>
           </div>
-          <h4>
-            Page: {currentPage} / {pages}
-          </h4>
-        </div>
+          <h4> Page: {currentPage} / {pages} </h4>
+        </div> */}
         <div className="characters-container-mobile section-background-styling">
           <div className="characters-mobile ">{charactersMobile}</div>
           <h4>
             Page: {currentPage} / {pages}
           </h4>
+          <div className="buttons-container">
+            <button onClick={handleFirstPage}>First</button>
+            <button onClick={handlePrevPage}>Prev</button>
+            <button onClick={handleNextPage}>Next</button>
+            <button onClick={handleLastPage}>Last</button>
+          </div>
         </div>
         <div className="characters-container-desktop section-background-styling">
           <div className="characters-desktop ">{charactersDesktop}</div>
           <h4>
             Page: {currentPage} / {pages}
           </h4>
+          <div className="buttons-container">
+            <button onClick={handleFirstPage}>First</button>
+            <button onClick={handlePrevPage}>Prev</button>
+            <button onClick={handleNextPage}>Next</button>
+            <button onClick={handleLastPage}>Last</button>
+          </div>
         </div>
       </div>
     </div>
