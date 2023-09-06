@@ -78,6 +78,7 @@ const Characters = () => {
 
   return (
     <div className="container">
+      {/* DISPLAY CHOSEN CHARACTER ON DESKTOP */}
       <div className="character-desktop">
         {selectedCharacter ? (
           <div>
@@ -90,16 +91,7 @@ const Characters = () => {
         )}
       </div>
       <div>
-        {/* <div className="displaypages">
-          <h2>Pages of characters</h2>
-          <div className="buttons-container">
-            <button onClick={handleFirstPage}>First</button>
-            <button onClick={handlePrevPage}>Prev</button>
-            <button onClick={handleNextPage}>Next</button>
-            <button onClick={handleLastPage}>Last</button>
-          </div>
-          <h4> Page: {currentPage} / {pages} </h4>
-        </div> */}
+        {/* CHOOSING CHARACTER + PAGES */}
         <div className="characters-container-mobile section-background-styling">
           <div className="characters-mobile ">{charactersMobile}</div>
           <h4>
