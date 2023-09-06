@@ -37,6 +37,16 @@
     font-weight: 500;
     color: #31456d;
   }
+  .episodes-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    height: 60px;
+  }
 }
 
 .characters-container-desktop {
@@ -44,6 +54,7 @@
 }
 .go-back-link {
   background-color: aqua;
+  padding: 1em;
 }
 
 .characters-mobile {

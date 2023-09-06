@@ -5,6 +5,8 @@ const Character = () => {
   const { paramsId } = useParams();
   const [character, setCharacter] = useState(null);
 
+  const [episodes, setEpisodes] = useState([]);
+
   useEffect(() => {
     const fetchCharacter = async () => {
       try {
@@ -39,6 +41,25 @@ const Character = () => {
           </div>
           <h2>Name: {character.name}</h2>
           <h3>Status: {character.status}</h3>
+          <h3>Origin: {character.origin.name}</h3>
+          <h3>Last seen: {character.location.name}</h3>
+
+          {/* <div>
+            <h3>Episodes:</h3>
+            <div className="episodes-list">
+              {character.episode.map((episodeUrl) => (
+                <div key={episodeUrl}>
+                  <a
+                    href={episodeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Episode {episodeUrl.split("/").pop()}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div> */}
           <Link to="/" className="go-back-link">
             Go back to characters
           </Link>
