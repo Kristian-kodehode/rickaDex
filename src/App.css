@@ -7,17 +7,19 @@
   max-width: 350px;
   height: 600px;
 
-  /* width: fit-content; */
   margin: 0 auto;
   border-radius: 1rem;
   padding-bottom: 1em;
   display: grid;
+  align-items: start;
   gap: 0.5em;
   padding: 1.25em 1em;
 }
-
 .characters-container-desktop {
   display: none;
+}
+.go-back-link {
+  background-color: aqua;
 }
 
 .characters-mobile {

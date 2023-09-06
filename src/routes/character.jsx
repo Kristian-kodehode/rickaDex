@@ -26,13 +26,14 @@ const Character = () => {
 
   return (
     <div className="character-container-mobile section-background-styling">
-      <Link to="/">Go back to characters</Link>
-      <h1>This is content for page two</h1>
       {character ? (
         <div>
-          <h1>{character.name}</h1>
-          <h1>{character.status}</h1>
           <img src={character.image} alt="" />
+          <h2>Name: {character.name}</h2>
+          <h3>Status: {character.status}</h3>
+          <Link to="/" className="go-back-link">
+            Go back to characters
+          </Link>
         </div>
       ) : (
         <p>Loading...</p>
