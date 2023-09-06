@@ -10,6 +10,10 @@ html {
   font-family: monospace;
 }
 
+body {
+  background-image: url("/Users/kristiankoningsberg/Koding/Kodehode/Prosjekter/websites/rickaDex/public/rick-morty-season-5.webp");
+}
+
 h1 {
   font-size: 3rem;
 }
