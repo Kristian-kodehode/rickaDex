@@ -8,6 +8,8 @@ const Characters = () => {
   const [characters, setCharacters] = useState([]);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
 
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -93,19 +95,22 @@ const Characters = () => {
       <div>
         {/* CHOOSING CHARACTER + PAGES */}
         <div className="characters-container-mobile section-background-styling">
-          <div className="characters-mobile ">{charactersMobile}</div>
-          <h4>
-            Page: {currentPage} / {pages}
-          </h4>
-          <div className="buttons-container">
-            <button onClick={handleFirstPage}>First</button>
-            <button onClick={handlePrevPage}>Prev</button>
-            <button onClick={handleNextPage}>Next</button>
-            <button onClick={handleLastPage}>Last</button>
-          </div>
+          <>
+            <div className="characters-mobile">{charactersMobile}</div>
+            <h4>
+              Page: {currentPage} / {pages}
+            </h4>
+            <div className="buttons-container">
+              <button onClick={handleFirstPage}>First</button>
+              <button onClick={handlePrevPage}>Prev</button>
+              <button onClick={handleNextPage}>Next</button>
+              <button onClick={handleLastPage}>Last</button>
+            </div>
+          </>
         </div>
+
         <div className="characters-container-desktop section-background-styling">
-          <div className="characters-desktop ">{charactersDesktop}</div>
+          <div className="characters-desktop">{charactersDesktop}</div>
           <h4>
             Page: {currentPage} / {pages}
           </h4>

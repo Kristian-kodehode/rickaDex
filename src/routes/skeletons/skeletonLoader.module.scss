@@ -1,0 +1,27 @@
+.skeletonContainer {
+  min-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  place-items: center;
+  gap: 1em;
+}
+
+.skeletonProduct {
+  height: 80px;
+  width: 80px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
