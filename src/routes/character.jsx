@@ -25,7 +25,7 @@ const Character = () => {
   }, []);
 
   return (
-    <div>
+    <div className="character-container-mobile section-background-styling">
       <Link to="/">Go back to characters</Link>
       <h1>This is content for page two</h1>
       {character ? (
