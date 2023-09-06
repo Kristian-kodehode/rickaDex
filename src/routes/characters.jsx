@@ -21,7 +21,7 @@ const Characters = () => {
         setCharacters(characterData.results);
         setPages(characterData.info.pages);
 
-        console.log(pages);
+        // console.log(characterData);
       } catch (error) {
         console.error("Error fetching data: ", error);
       }

@@ -16,6 +16,7 @@ const Character = () => {
         }
         const data = await response.json();
         setCharacter(data);
+        console.log(character);
       } catch (error) {
         console.error("Error fetching character data: ", error);
       }
@@ -29,6 +30,13 @@ const Character = () => {
       {character ? (
         <div>
           <img src={character.image} alt="" />
+          <div className="character-genre">
+            <p>#{character.id}</p>
+            <span>|</span>
+            <p>{character.species}</p>
+            <span>|</span>
+            <p>{character.gender}</p>
+          </div>
           <h2>Name: {character.name}</h2>
           <h3>Status: {character.status}</h3>
           <Link to="/" className="go-back-link">
