@@ -5,8 +5,6 @@ const Character = () => {
   const { paramsId } = useParams();
   const [character, setCharacter] = useState(null);
 
-  const [episodes, setEpisodes] = useState([]);
-
   useEffect(() => {
     const fetchCharacter = async () => {
       try {

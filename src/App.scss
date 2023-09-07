@@ -36,11 +36,9 @@
 
   margin: auto;
   border-radius: 1rem;
-  padding-bottom: 1em;
   display: grid;
   align-items: start;
   gap: 0.5em;
-  // padding: 1.25em 1em;
 }
 .character-container-mobile {
   justify-content: center;
@@ -75,12 +73,14 @@
     border-radius: 0px 0px 8px 8px;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    height: 100%;
   }
 
   .go-back-link {
     padding: 1em;
     font-size: 1.25rem;
     align-self: flex-end;
+    height: 54px;
   }
 }
 
@@ -101,7 +101,7 @@
 .characters-desktop {
   display: none;
 }
-.character-desktop {
+.character-container-desktop {
   display: none;
 }
 .characters-card {
@@ -120,7 +120,7 @@
 }
 
 .section-background-styling {
-  padding: 1.5em 1em;
+  padding: 1em 1em;
   border: 1px solid white;
   color: white;
   border-radius: 1rem;
@@ -142,8 +142,13 @@
     margin: 120px auto;
     display: flex;
     gap: 1rem;
+    align-items: flex-start;
     justify-content: space-between;
-    /* background-color: teal; */
+    // height: 600px;
+    // background-color: teal;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 1.8em;
+    padding: 1em;
   }
   .thumbnailimages:hover {
     border: 1px solid white;
@@ -154,10 +159,9 @@
   }
   .characters-container-desktop {
     /* color: white; */
-    max-width: 550px;
+    max-width: 516px;
     height: 600px;
 
-    // margin: 0 auto;
     padding-bottom: 1em;
     display: grid;
     gap: 0.5em;
@@ -170,7 +174,8 @@
     grid-template-rows: repeat(5, 1fr);
     gap: 1em;
 
-    width: 100%;
+    // width: 100%;
+    width: fit-content;
     height: 100%;
 
     // margin: 0 auto;
@@ -180,10 +185,40 @@
   .characters-mobile {
     display: none;
   }
-  .character-desktop {
+  .character-container-desktop {
     display: block;
-
+    height: 600px;
     width: 100%;
+
+    img {
+      border-radius: 0.75em;
+      border: 2px solid white;
+    }
+    .character-genre {
+      padding: 1em 1em;
+      display: flex;
+      gap: 1em;
+      border-radius: 0px 0px 8px 8px;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+      margin-bottom: -3rem;
+    }
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-weight: 500;
+      line-height: 2rem;
+      text-transform: uppercase;
+    }
+
+    .character-main-info {
+      padding: 3.5em 1em 1em 1em;
+      border-radius: 0px 0px 8px 8px;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+      height: 100%;
+    }
   }
   .characters-names {
     -webkit-line-clamp: 2;

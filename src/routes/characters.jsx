@@ -81,32 +81,59 @@ const Characters = () => {
   return (
     <div className="container">
       {/* DISPLAY CHOSEN CHARACTER ON DESKTOP */}
-      <div className="character-desktop section-background-styling">
+      <div className="character-container-desktop section-background-styling">
         {selectedCharacter ? (
           <div>
             <img src={selectedCharacter.image} alt="" />
-            <h1>Name: {selectedCharacter.name}</h1>
-            <h1>Status: {selectedCharacter.status}</h1>
+            <div className="character-genre">
+              <p>#{selectedCharacter.id}</p>
+              <span>|</span>
+              <p>{selectedCharacter.species}</p>
+              <span>|</span>
+              <p>{selectedCharacter.gender}</p>
+            </div>
+            <div className="character-main-info">
+              <h5>
+                <strong>Name:</strong> {selectedCharacter.name}
+              </h5>
+              <h5>
+                <strong>Status:</strong> {selectedCharacter.status}
+              </h5>
+              <h5>
+                <strong>Origin:</strong> {selectedCharacter.origin.name}
+              </h5>
+              <h5>
+                <strong>Last seen:</strong> {selectedCharacter.location.name}
+              </h5>
+            </div>
           </div>
         ) : (
           <p>Loading...</p>
         )}
       </div>
-      <div>
+      <div className="characters-shared-container">
         {/* CHOOSING CHARACTER + PAGES */}
         <div className="characters-container-mobile section-background-styling">
-          <>
+          <div>
             <div className="characters-mobile">{charactersMobile}</div>
             <h4>
               Page: {currentPage} / {pages}
             </h4>
-            <div className="buttons-container">
-              <button onClick={handleFirstPage}>First</button>
-              <button onClick={handlePrevPage}>Prev</button>
-              <button onClick={handleNextPage}>Next</button>
-              <button onClick={handleLastPage}>Last</button>
+            <div className="buttons-container section-background-styling">
+              <button onClick={handleFirstPage}>
+                <iconify-icon icon="svg-spinners:gooey-balls-1"></iconify-icon>
+              </button>
+              <button onClick={handlePrevPage}>
+                <iconify-icon icon="memory:arrow-left-bold"></iconify-icon>
+              </button>
+              <button onClick={handleNextPage}>
+                <iconify-icon icon="memory:arrow-right-bold"></iconify-icon>
+              </button>
+              <button onClick={handleLastPage}>
+                <iconify-icon icon="svg-spinners:gooey-balls-1"></iconify-icon>
+              </button>
             </div>
-          </>
+          </div>
         </div>
 
         <div className="characters-container-desktop section-background-styling">
@@ -114,11 +141,19 @@ const Characters = () => {
           <h4>
             Page: {currentPage} / {pages}
           </h4>
-          <div className="buttons-container">
-            <button onClick={handleFirstPage}>First</button>
-            <button onClick={handlePrevPage}>Prev</button>
-            <button onClick={handleNextPage}>Next</button>
-            <button onClick={handleLastPage}>Last</button>
+          <div className="buttons-container section-background-styling">
+            <button onClick={handleFirstPage}>
+              <iconify-icon icon="svg-spinners:gooey-balls-1"></iconify-icon>
+            </button>
+            <button onClick={handlePrevPage}>
+              <iconify-icon icon="memory:arrow-left-bold"></iconify-icon>
+            </button>
+            <button onClick={handleNextPage}>
+              <iconify-icon icon="memory:arrow-right-bold"></iconify-icon>
+            </button>
+            <button onClick={handleLastPage}>
+              <iconify-icon icon="svg-spinners:gooey-balls-1"></iconify-icon>
+            </button>
           </div>
         </div>
       </div>
