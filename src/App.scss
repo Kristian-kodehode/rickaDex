@@ -34,13 +34,6 @@
   padding: 1em;
   margin: 0px auto;
 }
-.search-input-field {
-  // border: 2px solid pink;
-  // display: block;
-  width: 100%;
-  // padding: 1em;
-  margin-bottom: 0.75em;
-}
 
 .characters-container-mobile,
 .character-container-mobile {
@@ -151,6 +144,15 @@
   box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
+}
+
+.search-input-field {
+  width: 100%;
+  margin-bottom: 0.75em;
+  color: black;
+}
+.search-input-field:hover {
+  border: 1px solid coral;
 }
 
 @media (min-width: 768px) {
