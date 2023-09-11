@@ -115,7 +115,7 @@ const Characters = () => {
                 <iconify-icon icon="memory:arrow-right-bold"></iconify-icon>
               </h1>
             </div>
-            <img src="public/imdbrick.jpg" alt="" />
+            <img src="/imdbrick.jpg" alt="" />
           </div>
         )}
       </div>
