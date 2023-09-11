@@ -160,35 +160,55 @@
     display: none;
   }
   .choose-character {
+    // background-image: url("../public/imdbrick.jpg");
+    background: repeat(none);
+
     display: flex;
     flex-direction: column;
     height: 100%;
 
-    padding-top: 15em;
-    justify-content: flex-start;
+    // padding-top: 15em;
+    justify-content: flex-end;
     text-align: center;
     gap: 2em;
 
     border: 1px solid white;
-    color: white;
-    border-radius: 0.5rem;
-    background: rgba(255, 255, 255, 0.2);
+    // color: white;
+    border-radius: 0.8rem;
+    // background: rgba(255, 255, 255, 0.1);
+
     box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    overflow: hidden;
 
     h2 {
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.289);
     }
+    .choose-character-text {
+      padding-bottom: 1.5em;
+      transform: translateY(-100%);
+      animation: slideDown 0.8s cubic-bezier(0.75, 0.82, 0.55, 1.5) forwards;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      outline: 1px solid white;
+      border-radius: 0em 0em 0.75em 0.75em;
+    }
+  }
+  @keyframes slideDown {
+    0% {
+      bottom: 200px;
+    }
+    100% {
+      bottom: 0%;
+      transform: translateY(0%);
+    }
   }
 
   .characters-container-desktop {
-    // max-width: 516px;
-    // height: 600px;
-    // padding-bottom: 1em;
-    // display: grid;
-    // gap: 0.5em;
-    // padding: 1em;
     color: white;
     max-width: 350px;
     height: 600px;
@@ -218,15 +238,6 @@
     display: block;
     height: 600px;
     width: 330px;
-
-    // color: white;
-    // max-width: 350px;
-    // height: 600px;
-    // margin: auto;
-    // border-radius: 1rem;
-    // display: grid;
-    // align-items: start;
-    // gap: 0.5em;
 
     img {
       border-radius: 0.75em;

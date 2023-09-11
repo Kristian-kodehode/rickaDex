@@ -109,10 +109,13 @@ const Characters = () => {
           </div>
         ) : (
           <div className="choose-character">
-            <h2>Choose a character</h2>
-            <h1>
-              <iconify-icon icon="memory:arrow-right-bold"></iconify-icon>
-            </h1>
+            <div className="choose-character-text">
+              <h2>Choose a character</h2>
+              <h1>
+                <iconify-icon icon="memory:arrow-right-bold"></iconify-icon>
+              </h1>
+            </div>
+            <img src="public/imdbrick.jpg" alt="" />
           </div>
         )}
       </div>
