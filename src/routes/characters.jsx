@@ -6,11 +6,12 @@ import SearchInput from "../components/searchInput";
 const Characters = () => {
   const [pages, setPages] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
+  const [allNames, setAllNames] = useState();
 
   const [characters, setCharacters] = useState([]);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
 
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
   const [searchInput, setSearchInput] = useState("");
   const [filteredCharacters, setFilteredCharacters] = useState([]);
@@ -25,8 +26,18 @@ const Characters = () => {
           throw new Error("Network response NOT ok.");
         }
         const characterData = await characterResponse.json();
+
+        const namesResponse = await fetch(
+          `https://rickandmortyapi.com/api/character/?name=${searchInput}`
+        );
+        if (!namesResponse.ok) {
+          throw new Error("Network response NOT ok.");
+        }
+        const namesData = await namesResponse.json();
+
         setCharacters(characterData.results);
         setPages(characterData.info.pages);
+        setAllNames(namesData.results);
 
         // console.log(characterData);
       } catch (error) {
