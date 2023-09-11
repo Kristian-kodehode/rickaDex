@@ -203,10 +203,10 @@
       border-radius: 0em 0em 0.75em 0.75em;
       scale: 1.03;
 
-      animation: slideDownImage 8s linear infinite 5s;
+      // animation: rotateImage 8s linear infinite 5s;
     }
   }
-  @keyframes slideDownImage {
+  @keyframes rotateImage {
     0% {
       transform: rotateZ(0deg);
     }
