@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../images/imdbrick.jpg";
+import chooseCharacterImage from "../images/imdbrick.jpg";
 
 const Characters = () => {
   const [pages, setPages] = useState(1);
@@ -110,7 +110,7 @@ const Characters = () => {
           </div>
         ) : (
           <div className="choose-character">
-            <img src="src/images/imdbrick.jpg" alt="" />
+            <img src={chooseCharacterImage} alt="Rick and Morty Portal Image" />
             <div className="choose-character-text">
               <h2>Choose a character</h2>
               <h1>
