@@ -201,6 +201,26 @@
       top: 0;
       outline: 1px solid white;
       border-radius: 0em 0em 0.75em 0.75em;
+      scale: 1.03;
+
+      animation: slideDownImage 8s linear infinite 5s;
+    }
+  }
+  @keyframes slideDownImage {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    25% {
+      transform: rotateZ(1deg);
+    }
+    50% {
+      transform: rotateZ(0deg);
+    }
+    75% {
+      transform: rotateZ(-1deg);
+    }
+    100% {
+      transform: rotateZ(0deg);
     }
   }
   @keyframes slideDown {
