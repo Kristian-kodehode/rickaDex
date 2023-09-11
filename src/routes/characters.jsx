@@ -27,6 +27,7 @@ const Characters = () => {
         }
         const characterData = await characterResponse.json();
 
+        //2nd fetch trying to get search to include all names from all pages
         const namesResponse = await fetch(
           `https://rickandmortyapi.com/api/character/?name=${searchInput}`
         );
@@ -34,6 +35,7 @@ const Characters = () => {
           throw new Error("Network response NOT ok.");
         }
         const namesData = await namesResponse.json();
+        //End of 2nd fetch
 
         setCharacters(characterData.results);
         setPages(characterData.info.pages);
