@@ -6,7 +6,6 @@ import SearchInput from "../components/searchInput";
 const Characters = () => {
   const [pages, setPages] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
-  const [allNames, setAllNames] = useState();
 
   const [characters, setCharacters] = useState([]);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
@@ -27,19 +26,8 @@ const Characters = () => {
         }
         const characterData = await characterResponse.json();
 
-        //2nd fetch trying to get search to include all names from all pages
-        const namesResponse = await fetch(
-          `https://rickandmortyapi.com/api/character/?name=${searchInput}`
-        );
-        if (!namesResponse.ok) {
-          throw new Error("Network response NOT ok.");
-        }
-        const namesData = await namesResponse.json();
-        //End of 2nd fetch
-
         setCharacters(characterData.results);
         setPages(characterData.info.pages);
-        setAllNames(namesData.results);
 
         // console.log(characterData);
       } catch (error) {
