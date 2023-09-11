@@ -109,7 +109,7 @@ const Characters = () => {
           </div>
         ) : (
           <div className="choose-character">
-            <img src="/imdbrick.jpg" alt="" />
+            <img src="public/imdbrick.jpg" alt="" />
             <div className="choose-character-text">
               <h2>Choose a character</h2>
               <h1>
