@@ -108,7 +108,12 @@ const Characters = () => {
             </div>
           </div>
         ) : (
-          <p>Loading...</p>
+          <div className="choose-character">
+            <h2>Choose a character</h2>
+            <h1>
+              <iconify-icon icon="memory:arrow-right-bold"></iconify-icon>
+            </h1>
+          </div>
         )}
       </div>
       <div className="characters-shared-container">
@@ -116,9 +121,9 @@ const Characters = () => {
         <div className="characters-container-mobile section-background-styling">
           <div>
             <div className="characters-mobile">{charactersMobile}</div>
-            <h4>
+            {/* <h4>
               Page: {currentPage} / {pages}
-            </h4>
+            </h4> */}
             <div className="buttons-container section-background-styling">
               <button onClick={handleFirstPage}>
                 <iconify-icon icon="svg-spinners:gooey-balls-1"></iconify-icon>
@@ -126,6 +131,9 @@ const Characters = () => {
               <button onClick={handlePrevPage}>
                 <iconify-icon icon="memory:arrow-left-bold"></iconify-icon>
               </button>
+              <h4>
+                {currentPage} / {pages}
+              </h4>
               <button onClick={handleNextPage}>
                 <iconify-icon icon="memory:arrow-right-bold"></iconify-icon>
               </button>
@@ -138,9 +146,9 @@ const Characters = () => {
 
         <div className="characters-container-desktop section-background-styling">
           <div className="characters-desktop">{charactersDesktop}</div>
-          <h4>
+          {/* <h4>
             Page: {currentPage} / {pages}
-          </h4>
+          </h4> */}
           <div className="buttons-container section-background-styling">
             <button onClick={handleFirstPage}>
               <iconify-icon icon="svg-spinners:gooey-balls-1"></iconify-icon>
@@ -148,6 +156,9 @@ const Characters = () => {
             <button onClick={handlePrevPage}>
               <iconify-icon icon="memory:arrow-left-bold"></iconify-icon>
             </button>
+            <h4>
+              {currentPage} / {pages}
+            </h4>
             <button onClick={handleNextPage}>
               <iconify-icon icon="memory:arrow-right-bold"></iconify-icon>
             </button>
