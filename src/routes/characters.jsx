@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import chooseCharacterImage from "../images/imdbrick.jpg";
-import SearchInput from "../components/searchInput";
+// import SearchInput from "../components/searchInput";
 
 const Characters = () => {
   const [pages, setPages] = useState(1);
@@ -14,6 +14,7 @@ const Characters = () => {
 
   const [searchInput, setSearchInput] = useState("");
   const [filteredCharacters, setFilteredCharacters] = useState([]);
+  const [searchedCharacters, setSearchedCharacters] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,11 +26,8 @@ const Characters = () => {
           throw new Error("Network response NOT ok.");
         }
         const characterData = await characterResponse.json();
-
         setCharacters(characterData.results);
         setPages(characterData.info.pages);
-
-        // console.log(characterData);
       } catch (error) {
         console.error("Error fetching data: ", error);
       }
@@ -39,13 +37,32 @@ const Characters = () => {
   }, [currentPage]);
 
   useEffect(() => {
+    const searchCharacters = async () => {
+      try {
+        const searchUrl = `https://rickandmortyapi.com/api/character/?name=${searchInput}`;
+        const characterResponseForSearch = await fetch(searchUrl);
+        if (!characterResponseForSearch.ok) {
+          throw new Error("Network response NOT ok.");
+        }
+        const characterSearchData = await characterResponseForSearch.json();
+        setSearchedCharacters(characterSearchData.results);
+        console.log(characterSearchData.results);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
+    };
+
+    searchCharacters();
+  }, [searchInput]);
+
+  useEffect(() => {
     // Filter characters based on the search input value
     const filtered = characters.filter((character) =>
       character.name.toLowerCase().includes(searchInput.toLowerCase())
     );
 
     setFilteredCharacters(filtered);
-  }, [searchInput, characters]);
+  }, [characters, searchedCharacters, searchInput]);
 
   const handlePrevPage = () => {
     if (currentPage > 1) {
@@ -81,6 +98,13 @@ const Characters = () => {
       </Link>
     </div>
   ));
+
+  /**
+   *
+   * // If changing to searchedCharacters.map the search work as intended,
+   * but not pages.
+   * Now it works with pages, but search result only shows for each page
+   */
 
   const charactersDesktop = filteredCharacters.map((character) => (
     <div key={character.id} className="characters-card">
