@@ -64,6 +64,9 @@ const Characters = () => {
     setFilteredCharacters(filtered);
   }, [characters, searchedCharacters, searchInput]);
 
+  /**
+   * EVENT HANDLERS
+   */
   const handlePrevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
@@ -79,6 +82,7 @@ const Characters = () => {
   const handleFirstPage = () => {
     setCurrentPage(1);
   };
+
   const handleLastPage = () => {
     setCurrentPage(pages);
   };
@@ -88,7 +92,7 @@ const Characters = () => {
   };
 
   /**
-   * MOBILE
+   * DISTRIBUTION OF CHARACTERS
    */
   // Showing Characters on mobile
   const charactersMobile = filteredCharacters.map((character) => (
