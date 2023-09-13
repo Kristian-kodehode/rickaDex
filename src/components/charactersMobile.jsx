@@ -18,9 +18,11 @@ const CharactersMobile = ({
           <button onClick={prevPage}>
             <iconify-icon icon="memory:arrow-left-bold"></iconify-icon>
           </button>
-          <h4>
-            {page} / {pages}
-          </h4>
+          <div className="page-counter">
+            <h4>
+              {page} / {pages}
+            </h4>
+          </div>
           <button onClick={nextPage}>
             <iconify-icon icon="memory:arrow-right-bold"></iconify-icon>
           </button>
