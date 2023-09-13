@@ -116,6 +116,18 @@ const Characters = () => {
       </Link>
     </div>
   ));
+  // const searchedCharactersDesktop = searchedCharacters.map((character) => (
+  //   <div key={character.id} className="characters-card">
+  //     <Link onClick={() => handleCharacterClick(character)}>
+  //       <div>
+  //         <img src={character.image} alt="" className="thumbnailimages" />
+  //         <h6 className="characters-names">{character.name}</h6>
+  //       </div>
+  //     </Link>
+  //   </div>
+  // ));
+
+  // const allCharactersDesktop = [charactersDesktop, searchedCharactersDesktop];
 
   return (
     <div className="outer-container">
