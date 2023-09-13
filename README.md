@@ -1,8 +1,13 @@
-# React + Vite
+# RickaDex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a fun little project fetching from an open Rick And Morty API to display different characters that has appeared throughout the series.
 
-Currently, two official plugins are available:
+It is fully functional, fully responsive.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The api is as said free, so the quality of the images is medium, but fine.
+
+Problems faced:
+With the search function i experienced a issue with it only searching through the current page shown characters.
+
+Solution:
+My solution was to create another fetch from the api and using a ternary to choose between the two results.
