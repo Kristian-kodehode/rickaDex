@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import chooseCharacterImage from "../images/imdbrick.jpg";
-// import SearchInput from "../components/searchInput";
+import CharactersMobile from "../components/charactersMobile";
+import CharactersDesktop from "../components/charactersDesktop.jsx";
 
 const Characters = () => {
   const [pages, setPages] = useState(1);
@@ -10,12 +11,11 @@ const Characters = () => {
   const [characters, setCharacters] = useState([]);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
 
-  // const [isLoading, setIsLoading] = useState(true);
-
   const [searchInput, setSearchInput] = useState("");
   const [filteredCharacters, setFilteredCharacters] = useState([]);
   const [searchedCharacters, setSearchedCharacters] = useState([]);
 
+  // Page distribution
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -36,6 +36,7 @@ const Characters = () => {
     fetchData();
   }, [currentPage]);
 
+  // Search Character distribution
   useEffect(() => {
     const searchCharacters = async () => {
       try {
@@ -208,54 +209,25 @@ const Characters = () => {
         </div>
         <div className="characters-shared-container">
           {/* CHOOSING CHARACTER + PAGES */}
-          <div className="characters-container-mobile section-background-styling">
-            <div>
-              <div className="characters-mobile">{allCharactersMobile}</div>
-              {/* <h4>
-                Page: {currentPage} / {pages}
-              </h4> */}
-              <div className="buttons-container section-background-styling">
-                <button onClick={handleFirstPage}>
-                  <iconify-icon icon="svg-spinners:gooey-balls-1"></iconify-icon>
-                </button>
-                <button onClick={handlePrevPage}>
-                  <iconify-icon icon="memory:arrow-left-bold"></iconify-icon>
-                </button>
-                <h4>
-                  {currentPage} / {pages}
-                </h4>
-                <button onClick={handleNextPage}>
-                  <iconify-icon icon="memory:arrow-right-bold"></iconify-icon>
-                </button>
-                <button onClick={handleLastPage}>
-                  <iconify-icon icon="svg-spinners:gooey-balls-1"></iconify-icon>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="characters-container-desktop section-background-styling">
-            <div className="characters-desktop">{allCharactersDesktop}</div>
-            {/* <h4>
-              Page: {currentPage} / {pages}
-            </h4> */}
-            <div className="buttons-container section-background-styling">
-              <button onClick={handleFirstPage}>
-                <iconify-icon icon="svg-spinners:gooey-balls-1"></iconify-icon>
-              </button>
-              <button onClick={handlePrevPage}>
-                <iconify-icon icon="memory:arrow-left-bold"></iconify-icon>
-              </button>
-              <h4>
-                {currentPage} / {pages}
-              </h4>
-              <button onClick={handleNextPage}>
-                <iconify-icon icon="memory:arrow-right-bold"></iconify-icon>
-              </button>
-              <button onClick={handleLastPage}>
-                <iconify-icon icon="svg-spinners:gooey-balls-1"></iconify-icon>
-              </button>
-            </div>
-          </div>
+          <CharactersMobile
+            allCharacters={allCharactersMobile}
+            firstPage={handleFirstPage}
+            prevPage={handlePrevPage}
+            nextPage={handleNextPage}
+            lastPage={handleLastPage}
+            page={currentPage}
+            pages={pages}
+          />
+
+          <CharactersDesktop
+            allCharacters={allCharactersDesktop}
+            firstPage={handleFirstPage}
+            prevPage={handlePrevPage}
+            nextPage={handleNextPage}
+            lastPage={handleLastPage}
+            page={currentPage}
+            pages={pages}
+          />
         </div>
       </div>
     </div>
