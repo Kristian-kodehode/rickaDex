@@ -87,6 +87,10 @@ const Characters = () => {
     setSelectedCharacter(character);
   };
 
+  /**
+   * MOBILE
+   */
+  // Showing Characters on mobile
   const charactersMobile = filteredCharacters.map((character) => (
     <div key={character.id} className="characters-card">
       <Link
@@ -99,13 +103,27 @@ const Characters = () => {
     </div>
   ));
 
-  /**
-   *
-   * // If changing to searchedCharacters.map the search work as intended,
-   * but not pages.
-   * Now it works with pages, but search result only shows for each page
-   */
+  // Showing Characters on mobile based on input value
+  const searchedCharactersMobile = searchedCharacters.map((character) => (
+    <div key={character.id} className="characters-card">
+      <Link
+        to={`/character/${character.id}`}
+        onClick={() => handleCharacterClick(character)}
+      >
+        <img src={character.image} alt="" className="thumbnailimages" />
+        <h6 className="characters-names">{character.name}</h6>
+      </Link>
+    </div>
+  ));
 
+  // Showing characters based on input value length - Mobile
+  const allCharactersMobile =
+    searchInput.length > 0 ? searchedCharactersMobile : charactersMobile;
+
+  /**
+   * DESKTOP
+   */
+  // Showing Characters on desktop
   const charactersDesktop = filteredCharacters.map((character) => (
     <div key={character.id} className="characters-card">
       <Link onClick={() => handleCharacterClick(character)}>
@@ -116,24 +134,27 @@ const Characters = () => {
       </Link>
     </div>
   ));
-  // const searchedCharactersDesktop = searchedCharacters.map((character) => (
-  //   <div key={character.id} className="characters-card">
-  //     <Link onClick={() => handleCharacterClick(character)}>
-  //       <div>
-  //         <img src={character.image} alt="" className="thumbnailimages" />
-  //         <h6 className="characters-names">{character.name}</h6>
-  //       </div>
-  //     </Link>
-  //   </div>
-  // ));
+  // Showing Characters on desktop based on input value
+  const searchedCharactersDesktop = searchedCharacters.map((character) => (
+    <div key={character.id} className="characters-card">
+      <Link onClick={() => handleCharacterClick(character)}>
+        <div>
+          <img src={character.image} alt="" className="thumbnailimages" />
+          <h6 className="characters-names">{character.name}</h6>
+        </div>
+      </Link>
+    </div>
+  ));
 
-  // const allCharactersDesktop = [charactersDesktop, searchedCharactersDesktop];
+  // Showing characters based on input value length - Desktop
+  const allCharactersDesktop =
+    searchInput.length > 0 ? searchedCharactersDesktop : charactersDesktop;
 
   return (
     <div className="outer-container">
       <input
         type="text"
-        placeholder="Search for character..."
+        placeholder="Search character..."
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
         className="search-input-field section-background-styling"
@@ -185,7 +206,7 @@ const Characters = () => {
           {/* CHOOSING CHARACTER + PAGES */}
           <div className="characters-container-mobile section-background-styling">
             <div>
-              <div className="characters-mobile">{charactersMobile}</div>
+              <div className="characters-mobile">{allCharactersMobile}</div>
               {/* <h4>
                 Page: {currentPage} / {pages}
               </h4> */}
@@ -209,7 +230,7 @@ const Characters = () => {
             </div>
           </div>
           <div className="characters-container-desktop section-background-styling">
-            <div className="characters-desktop">{charactersDesktop}</div>
+            <div className="characters-desktop">{allCharactersDesktop}</div>
             {/* <h4>
               Page: {currentPage} / {pages}
             </h4> */}

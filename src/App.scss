@@ -150,10 +150,11 @@
   width: 100%;
   margin-bottom: 0.75em;
   color: black;
+  font-size: 1.25rem;
 }
-.search-input-field:hover {
-  border: 1px solid coral;
-}
+// .search-input-field:hover {
+//   border: 1px solid coral;
+// }
 
 @media (min-width: 768px) {
   .outer-container {
