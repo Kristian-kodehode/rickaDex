@@ -157,6 +157,7 @@ const Characters = () => {
 
   return (
     <div className="outer-container">
+      {/* SearchBar Input */}
       <input
         type="text"
         placeholder="Search character..."
