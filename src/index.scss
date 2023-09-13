@@ -19,6 +19,10 @@ body {
 //   -webkit-text-security: square;
 // }
 
+input::placeholder {
+  color: rgba(195, 195, 195, 1);
+}
+
 h1 {
   font-size: 3rem;
 }
